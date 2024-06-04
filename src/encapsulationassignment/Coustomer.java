@@ -8,7 +8,7 @@ public class Coustomer {
 	private String customerId;
 	private String name;
 	private String email;
-	private List<Car> rentalCars;
+	private List<Car> rentedCars;
 	
 	public Coustomer(String customerId, String name, String email) {
 		if(customerId == null || customerId.isEmpty()) {
@@ -21,7 +21,7 @@ public class Coustomer {
 		this.customerId = customerId;
 		this.name = name;
 		this.email = email;
-		this.rentalCars = new ArrayList<>();
+		this.rentedCars = new ArrayList<>();
 	}
 
 	public String getCustomerId() {
@@ -49,25 +49,25 @@ public class Coustomer {
 	}
 
 	public List<Car> getRentalCars() {
-		return rentalCars;
+		return rentedCars;
 	}
 
-	public void setRentalCars(List<Car> rentalCars) {
-		this.rentalCars = rentalCars;
+	public void setRentedCars(List<Car> rentedCars) {
+		this.rentedCars = rentedCars;
 	}
 	
 	
 	public void addRentalCar(Car car) {
-		if(rentalCars.contains(car)) {
+		if(rentedCars.contains(car)) {
 			System.out.println("Car is already rental by this customer");
 		}
-		rentalCars.add(car);
+		rentedCars.add(car);
 	}
 	
 	public void removeRentedCar(Car car) {
-		if(!rentalCars.contains(car)) {
+		if(!rentedCars.contains(car)) {
 			System.out.println("Car is not rented by this customer");
 		}
-		rentalCars.remove(car);
+		rentedCars.remove(car);
 	}
 }
